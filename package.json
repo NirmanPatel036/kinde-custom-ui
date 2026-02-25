@@ -1,20 +1,11 @@
 {
-    "name": "eulerpro-kinde-custom-ui",
-    "version": "1.0.0",
-    "description": "Custom Kinde Auth UI for EulerPro",
-    "scripts": {
-        "preview": "npx serve preview -p 4000",
-        "dev": "npx live-server preview --port=5173"
-    },
     "dependencies": {
-        "@kinde/infrastructure": "latest"
+        "@kinde/infrastructure": "^0.2.2",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
     },
     "devDependencies": {
-        "@types/react": "^18",
-        "@types/react-dom": "^18",
-        "react": "^18",
-        "react-dom": "^18",
-        "typescript": "^5",
-        "serve": "^14"
+        "@types/react": "^19.0.12",
+        "@types/react-dom": "^19.0.4"
     }
 }
