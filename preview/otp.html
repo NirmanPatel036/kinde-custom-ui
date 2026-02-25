@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EulerPro — Verify Code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="auth-shell">
+        <div class="auth-shell__bg" aria-hidden="true"></div>
+        <div class="auth-card">
+
+            <div class="auth-logo">
+                <img src="images/logo-cropped.svg" alt="EulerPro"
+                    onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-weight:800;font-size:1.375rem;letter-spacing:-0.04em;color:#330c26\'>EULERPRO</span>'" />
+            </div>
+
+            <div style="text-align:center;margin:0.5rem 0 1.5rem">
+                <div
+                    style="width:72px;height:72px;background:rgba(245,21,130,0.08);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f51582" stroke-width="1.75"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                        <polyline points="3 7 12 13 21 7" />
+                    </svg>
+                </div>
+            </div>
+
+            <h1 class="auth-heading" style="text-align:center">Check your email</h1>
+            <p class="auth-subheading" style="text-align:center">We sent a 6-digit code to your email. Enter it below.
+            </p>
+
+            <form>
+                <div class="otp-inputs">
+                    <input type="text" maxlength="1" inputmode="numeric" />
+                    <input type="text" maxlength="1" inputmode="numeric" />
+                    <input type="text" maxlength="1" inputmode="numeric" />
+                    <input type="text" maxlength="1" inputmode="numeric" />
+                    <input type="text" maxlength="1" inputmode="numeric" />
+                    <input type="text" maxlength="1" inputmode="numeric" />
+                </div>
+                <button class="auth-btn" type="submit">Verify code</button>
+            </form>
+
+            <p class="auth-footer-text" style="margin-top:1rem">Didn't receive it? <a href="#">Resend code</a></p>
+            <p class="auth-powered-by">Powered by <strong>Kinde</strong></p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-advance OTP inputs
+        document.querySelectorAll('.otp-inputs input').forEach((input, i, inputs) => {
+            input.addEventListener('input', () => {
+                if (input.value && inputs[i + 1]) inputs[i + 1].focus();
+            });
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && !input.value && inputs[i - 1]) inputs[i - 1].focus();
+            });
+        });
+    </script>
+</body>
+
+</html>
